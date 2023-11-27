@@ -587,9 +587,17 @@ class Trainer:
     def save_model(self):
         """Save model weights to disk
         """
-        save_folder = os.path.join(self.log_path, "models", "weights_{}".format(self.epoch))
+        # save_folder = os.path.join(self.log_path, "models", "weights_{}".format(self.epoch))
+        # to save memory, always store at epoch 0
+        save_folder = os.path.join(self.log_path, "models", "weights_{}".format(0))
+
         if not os.path.exists(save_folder):
             os.makedirs(save_folder)
+        else:
+            # clear the dir
+            for f in os.listdir(save_folder):
+                os.remove(os.path.join(save_folder, f))
+                
 
         for model_name, model in self.models.items():
             save_path = os.path.join(save_folder, "{}.pth".format(model_name))
