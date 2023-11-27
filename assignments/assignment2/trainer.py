@@ -186,11 +186,25 @@ class Trainer:
         self.step = 0
         self.start_time = time.time()
 
+        with open(f'./info/finetune_monodepth.txt', 'a') as f:
+            f.write(f'=========================================================\n')
+            f.write(f'start finetuning monodepth\n')
         import tqdm
         for self.epoch in tqdm.tqdm(range(self.opt.num_epochs)):
+
+            self.total_loss = 0
+
             self.run_epoch()
+
             if (self.epoch + 1) % self.opt.save_frequency == 0:
                 self.save_model()
+            
+            self.total_loss /= len(self.train_loader)
+            with open(f'./info/finetune_monodepth.txt', 'a') as f:
+                f.write(f'epoch {self.epoch}, loss {self.total_loss}\n')
+        
+        with open(f'./info/finetune_monodepth.txt', 'a') as f:
+            f.write(f'finish finetuning monodepth\n')
 
     def run_epoch(self):
         """Run a single epoch of training and validation
@@ -205,6 +219,8 @@ class Trainer:
             before_op_time = time.time()
 
             outputs, losses = self.process_batch(inputs)
+
+            self.total_loss += losses
 
             self.model_optimizer.zero_grad()
             losses["loss"].backward()
@@ -597,7 +613,7 @@ class Trainer:
             # clear the dir
             for f in os.listdir(save_folder):
                 os.remove(os.path.join(save_folder, f))
-                
+
 
         for model_name, model in self.models.items():
             save_path = os.path.join(save_folder, "{}.pth".format(model_name))
