@@ -185,7 +185,9 @@ class Trainer:
         self.epoch = 0
         self.step = 0
         self.start_time = time.time()
-        for self.epoch in range(self.opt.num_epochs):
+
+        import tqdm
+        for self.epoch in tqdm.tqdm(range(self.opt.num_epochs)):
             self.run_epoch()
             if (self.epoch + 1) % self.opt.save_frequency == 0:
                 self.save_model()
@@ -195,7 +197,7 @@ class Trainer:
         """
         self.model_lr_scheduler.step()
 
-        print("Training")
+        # print("Training")
         self.set_train()
 
         for batch_idx, inputs in enumerate(self.train_loader):
