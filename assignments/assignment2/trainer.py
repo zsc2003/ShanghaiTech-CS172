@@ -186,10 +186,11 @@ class Trainer:
         self.step = 0
         self.start_time = time.time()
 
-        with open(f'./info/finetune_monodepth.txt', 'a') as f:
+        with open(f'./info/monodepth.txt', 'a') as f:
             f.write(f'=========================================================\n')
-            f.write(f'start finetuning monodepth\n')
+            f.write(f'start training monodepth\n')
         import tqdm
+        self.batch_num = 1
         for self.epoch in tqdm.tqdm(range(self.opt.num_epochs)):
 
             self.total_loss = 0
@@ -199,28 +200,31 @@ class Trainer:
             if (self.epoch + 1) % self.opt.save_frequency == 0:
                 self.save_model()
             
-            self.total_loss /= len(self.train_loader)
-            with open(f'./info/finetune_monodepth.txt', 'a') as f:
-                f.write(f'epoch {self.epoch}, loss {self.total_loss}\n')
+            self.total_loss /= self.batch_num
+            # with open(f'./info/monodepth.txt', 'a') as f:
+                # f.write(f'epoch {self.epoch}, loss {self.total_loss}\n')
         
-        with open(f'./info/finetune_monodepth.txt', 'a') as f:
-            f.write(f'finish finetuning monodepth\n')
+        with open(f'./info/monodepth.txt', 'a') as f:
+            f.write(f'finish training monodepth\n')
 
     def run_epoch(self):
         """Run a single epoch of training and validation
         """
         self.model_lr_scheduler.step()
 
-        # print("Training")
+        print("Training")
         self.set_train()
 
         for batch_idx, inputs in enumerate(self.train_loader):
+            self.batch_num = max(self.batch_num, batch_idx + 1)
 
             before_op_time = time.time()
 
             outputs, losses = self.process_batch(inputs)
 
             self.total_loss += losses
+            with open(f'./info/monodepth.txt', 'a') as f:
+                f.write(f'epoch : {self.epoch}, loss : {losses}\n')
 
             self.model_optimizer.zero_grad()
             losses["loss"].backward()
