@@ -207,8 +207,8 @@ class Trainer:
                 self.save_model()
             
             self.total_loss /= self.batch_num
-            # with open(f'./info/monodepth.txt', 'a') as f:
-                # f.write(f'epoch {self.epoch}, loss {self.total_loss}\n')
+            with open(f'./info/monodepth.txt', 'a') as f:
+                f.write(f'epoch {self.epoch}, loss {self.total_loss}\n')
         
         with open(f'./info/monodepth.txt', 'a') as f:
             f.write(f'finish training monodepth\n')
@@ -227,10 +227,18 @@ class Trainer:
             before_op_time = time.time()
 
             outputs, losses = self.process_batch(inputs)
+            
+            # print("losses : ", losses["loss"])
+            # print("losses : ", losses["loss"].cpu().data)
+            # m_loss = losses["loss"].cpu().data # it is a tensor with one element, turn it into float number
+            # m_loss = m_loss.item()
+            # print("loss = ", m_loss)
+            
+            self.total_loss += losses["loss"].cpu().data.item()
 
-            self.total_loss += losses
-            with open(f'./info/monodepth.txt', 'a') as f:
-                f.write(f'epoch : {self.epoch}, loss : {losses}\n')
+            # self.total_loss += losses
+            # with open(f'./info/monodepth.txt', 'a') as f:
+                # f.write(f'epoch : {self.epoch}, loss : {losses}\n')
 
             self.model_optimizer.zero_grad()
             losses["loss"].backward()
