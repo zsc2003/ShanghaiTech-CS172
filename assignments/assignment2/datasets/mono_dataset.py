@@ -111,10 +111,10 @@ class MonoDataset(data.Dataset):
                 n, im, i = k
                 inputs[(n, im, i)] = self.to_tensor(f)
 
-                print("================================")
-                print("color_aug : ", color_aug)
-                print("f : ", f)
-                print("================================")
+                # print("================================")
+                # print("color_aug : ", color_aug)
+                # print("f : ", f)
+                # print("================================")
 
                 # inputs[(n + "_aug", im, i)] = self.to_tensor(color_aug(f))
                 inputs[(n + "_aug", im, i)] = self.to_tensor(color_aug(f))
