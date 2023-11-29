@@ -525,6 +525,28 @@ class Trainer:
             smooth_loss = get_smooth_loss(norm_disp, color)
 
             loss += self.opt.disparity_smoothness * smooth_loss / (2 ** scale)
+
+            # add back projection loss
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             total_loss += loss
             losses["loss/{}".format(scale)] = loss
 
