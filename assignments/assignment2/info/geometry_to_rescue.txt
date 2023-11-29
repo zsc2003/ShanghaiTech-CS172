@@ -98,4 +98,3 @@ epoch 48, loss 0.1060845754966246
 epoch  48 | batch    352 | examples/s: 290.2 | loss: 0.10535 | time elapsed: 04h18m33s | time left: 00h07m59s
 epoch 49, loss 0.10608084798496902
 finish training geometry_to_rescue
-=========================================================
