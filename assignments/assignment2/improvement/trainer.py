@@ -47,7 +47,6 @@ class Trainer:
         assert self.opt.frame_ids[0] == 0, "frame_ids must start with 0"
 
         self.use_pose_net = not (self.opt.use_stereo and self.opt.frame_ids == [0])
-        print("use_pose_net = ", self.use_pose_net)
 
         if self.opt.use_stereo:
             self.opt.frame_ids.append("s")
@@ -394,6 +393,7 @@ class Trainer:
             outputs[("depth", 0, scale)] = depth
 
             for i, frame_id in enumerate(self.opt.frame_ids[1:]):
+
                 if frame_id == "s":
                     T = inputs["stereo_T"]
                 else:
@@ -401,8 +401,7 @@ class Trainer:
 
                 # from the authors of https://arxiv.org/abs/1712.00175
                 if self.opt.pose_model_type == "posecnn":
-                    
-                    
+
                     axisangle = outputs[("axisangle", 0, frame_id)]
                     translation = outputs[("translation", 0, frame_id)]
 

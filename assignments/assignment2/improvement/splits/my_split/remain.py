@@ -6,9 +6,9 @@
 with open('val_files.txt', 'r') as f:
     with open('val.txt', 'w') as f1:
         for line in f.readlines():
-            f1.write(line.split(' ')[0] + '\n')
+            f1.write(line.split('/')[1] + '/' + line.split('/')[2])
 
 with open('train_files.txt', 'r') as f:
     with open('train.txt', 'w') as f1:
         for line in f.readlines():
-            f1.write(line.split(' ')[0] + '\n')
+            f1.write(line.split('/')[1] + '/' + line.split('/')[2])
