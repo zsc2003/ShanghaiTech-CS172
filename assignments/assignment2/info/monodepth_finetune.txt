@@ -1,0 +1,82 @@
+=========================================================
+start training monodepth
+epoch 0, loss 0.09175448625557092
+epoch   0 | batch      0 | examples/s:   4.2 | loss: 0.14508 | time elapsed: 00h00m18s | time left: 00h00m00s
+epoch   0 | batch    250 | examples/s:  60.5 | loss: 0.09761 | time elapsed: 00h02m24s | time left: 05h36m04s
+epoch   0 | batch    500 | examples/s:  50.4 | loss: 0.08845 | time elapsed: 00h04m33s | time left: 05h15m22s
+
+
+
+
+
+epoch 1, loss 0.08584131159090282
+epoch   1 | batch    250 | examples/s:  42.3 | loss: 0.08776 | time elapsed: 00h08m30s | time left: 05h05m08s
+epoch   1 | batch    500 | examples/s:  40.4 | loss: 0.08326 | time elapsed: 00h10m40s | time left: 05h01m01s
+epoch 2, loss 0.08380121854632115
+epoch   2 | batch    250 | examples/s:  65.2 | loss: 0.08109 | time elapsed: 00h14m32s | time left: 04h54m01s
+epoch   2 | batch    500 | examples/s:  31.7 | loss: 0.09248 | time elapsed: 00h16m38s | time left: 04h49m59s
+epoch   2 | batch    598 | examples/s:  61.4 | loss: 0.08287 | time elapsed: 00h17m29s | time left: 04h48m58s
+epoch 3, loss 0.0825234435806941
+epoch 4, loss 0.08190238251538147
+epoch 5, loss 0.08102772734559721
+epoch   5 | batch    495 | examples/s:  45.1 | loss: 0.08214 | time elapsed: 00h34m17s | time left: 04h26m13s
+epoch   8 | batch    392 | examples/s:  76.8 | loss: 0.07920 | time elapsed: 00h51m11s | time left: 04h07m49s
+epoch  11 | batch    289 | examples/s:  53.2 | loss: 0.08569 | time elapsed: 01h08m01s | time left: 03h50m00s
+epoch  14 | batch    186 | examples/s: 106.8 | loss: 0.07854 | time elapsed: 01h24m56s | time left: 03h32m47s
+epoch  17 | batch     83 | examples/s:  37.6 | loss: 0.07791 | time elapsed: 01h41m44s | time left: 03h15m26s
+epoch  19 | batch    681 | examples/s:  81.2 | loss: 0.07035 | time elapsed: 01h58m32s | time left: 02h58m13s
+epoch  22 | batch    578 | examples/s:  66.7 | loss: 0.07301 | time elapsed: 02h15m24s | time left: 02h41m13s
+epoch  25 | batch    475 | examples/s:  57.9 | loss: 0.07174 | time elapsed: 02h32m17s | time left: 02h24m15s
+epoch  28 | batch    372 | examples/s:  69.2 | loss: 0.06680 | time elapsed: 02h49m08s | time left: 02h07m16s
+epoch 6, loss 0.08022980879827504
+epoch 7, loss 0.07967635352541819
+epoch 8, loss 0.07953869890469457
+epoch 9, loss 0.07899835193994723
+epoch 10, loss 0.07839570397487211
+epoch 11, loss 0.07819053930856192
+epoch 12, loss 0.07780963152689532
+epoch 13, loss 0.07748385558114752
+epoch 14, loss 0.07475447984739139
+epoch 15, loss 0.07397191563405936
+epoch 16, loss 0.07364134434690318
+epoch 17, loss 0.07342601884767605
+epoch 18, loss 0.07320960565933828
+epoch 19, loss 0.07305336113854413
+epoch 20, loss 0.07295560660890267
+epoch 21, loss 0.07281101763928668
+epoch 22, loss 0.07271246130600806
+epoch 23, loss 0.07261582325809182
+epoch 24, loss 0.07254325978447299
+epoch 25, loss 0.07244094563767675
+epoch 26, loss 0.072339628061835
+epoch 27, loss 0.07226980698112924
+epoch 28, loss 0.07218100019490158
+epoch 29, loss 0.07192969637871129
+epoch 30, loss 0.07188742612614782
+epoch 31, loss 0.07186959261412117
+epoch  31 | batch    269 | examples/s:  63.7 | loss: 0.07695 | time elapsed: 03h06m03s | time left: 01h50m22s
+epoch 32, loss 0.07186729959431457
+epoch 33, loss 0.07184810762674934
+epoch 34, loss 0.0718052201717029
+epoch  34 | batch    166 | examples/s:  47.6 | loss: 0.05985 | time elapsed: 03h23m22s | time left: 01h33m38s
+epoch 35, loss 0.07182444079902645
+epoch 36, loss 0.07178553856494764
+epoch 37, loss 0.07178280423906833
+epoch  37 | batch     63 | examples/s:  80.1 | loss: 0.07774 | time elapsed: 03h40m49s | time left: 01h16m51s
+epoch 38, loss 0.07177102226716135
+epoch 39, loss 0.07174638135308206
+epoch  39 | batch    661 | examples/s:  43.0 | loss: 0.06643 | time elapsed: 03h57m59s | time left: 00h59m55s
+epoch 40, loss 0.07176926559881545
+epoch 41, loss 0.07174459381424922
+epoch 42, loss 0.07172522492993745
+epoch  42 | batch    558 | examples/s:  40.6 | loss: 0.07280 | time elapsed: 04h15m34s | time left: 00h43m01s
+epoch 43, loss 0.07173089760112525
+epoch 44, loss 0.0717033641027571
+epoch 45, loss 0.07170663394575963
+epoch  45 | batch    455 | examples/s:  39.6 | loss: 0.06942 | time elapsed: 04h33m00s | time left: 00h26m01s
+epoch 46, loss 0.0717075924985589
+epoch 47, loss 0.07170717986287302
+epoch 48, loss 0.07168189935205496
+epoch  48 | batch    352 | examples/s:  86.6 | loss: 0.07053 | time elapsed: 04h50m18s | time left: 00h08m57s
+epoch 49, loss 0.07171813303474522
+finish training monodepth

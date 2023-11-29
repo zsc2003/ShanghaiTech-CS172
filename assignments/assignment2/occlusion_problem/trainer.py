@@ -192,9 +192,9 @@ class Trainer:
         self.step = 0
         self.start_time = time.time()
 
-        with open(f'./info/monodepth.txt', 'a') as f:
+        with open(f'./info/geometry_to_rescue.txt', 'a') as f:
             f.write(f'=========================================================\n')
-            f.write(f'start training monodepth\n')
+            f.write(f'start training geometry_to_rescue\n')
         import tqdm
         self.batch_num = 1
         for self.epoch in tqdm.tqdm(range(self.opt.num_epochs)):
@@ -207,11 +207,12 @@ class Trainer:
                 self.save_model()
             
             self.total_loss /= self.batch_num
-            with open(f'./info/monodepth.txt', 'a') as f:
+            with open(f'./info/geometry_to_rescue.txt', 'a') as f:
                 f.write(f'epoch {self.epoch}, loss {self.total_loss}\n')
         
-        with open(f'./info/monodepth.txt', 'a') as f:
-            f.write(f'finish training monodepth\n')
+        with open(f'./info/geometry_to_rescue.txt', 'a') as f:
+            f.write(f'finish training geometry_to_rescue\n')
+            f.write(f'=========================================================\n')
 
     def run_epoch(self):
         """Run a single epoch of training and validation
@@ -237,7 +238,7 @@ class Trainer:
             self.total_loss += losses["loss"].cpu().data.item()
 
             # self.total_loss += losses
-            # with open(f'./info/monodepth.txt', 'a') as f:
+            # with open(f'./info/geometry_to_rescue.txt', 'a') as f:
                 # f.write(f'epoch : {self.epoch}, loss : {losses}\n')
 
             self.model_optimizer.zero_grad()
