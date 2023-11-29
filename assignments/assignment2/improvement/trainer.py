@@ -569,13 +569,13 @@ class Trainer:
                     dist = dist + (0.5*av_dist1+0.5*av_dist2)
                 return dist*100
 
-            predict_depth = outputs[("depth", 0, 0)]
-            predict_depth = torch.clamp(F.interpolate(
-                predict_depth, [375, 1242], mode="bilinear", align_corners=False), 1e-3, 80)
-            predict_depth = predict_depth.detach()
+            # predict_depth = outputs[("depth", 0, 0)]
+            # predict_depth = torch.clamp(F.interpolate(
+            #     predict_depth, [375, 1242], mode="bilinear", align_corners=False), 1e-3, 80)
+            # predict_depth = predict_depth.detach()
 
             # back projection to 3D point clouds
-            predict_color = outputs[("color", scale)]
+            # predict_color = outputs[("color", scale)]
             
 
 
