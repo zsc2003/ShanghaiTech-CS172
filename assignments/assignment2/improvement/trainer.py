@@ -569,7 +569,7 @@ class Trainer:
                 for i in range(m_batch_size):
                     av_dist1 = array2samples_distance(array1[i], array2[i])
                     av_dist2 = array2samples_distance(array2[i], array1[i])
-                    dist = dist + (0.5*av_dist1+0.5*av_dist2)
+                    dist = dist + (av_dist1+av_dist2)
                 return dist*100
 
             predict_depth = outputs[("depth", 0, 0)]

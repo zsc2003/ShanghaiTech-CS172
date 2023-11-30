@@ -38,3 +38,20 @@ start training geometry_to_rescue
 start training geometry_to_rescue
 =========================================================
 start training geometry_to_rescue
+epoch 0, loss 0.14283569801210846
+epoch 1, loss 0.1256327958041523
+finish training improvement
+=========================================================
+=========================================================
+start training geometry_to_rescue
+epoch 0, loss 0.14180700151454365
+epoch 1, loss 0.12553370910857442
+epoch 2, loss 0.11716559598389774
+epoch 3, loss 0.11245049691404324
+epoch 4, loss 0.10817407215075214
+epoch 5, loss 0.10464648091461451
+epoch 6, loss 0.10215270044162508
+epoch 7, loss 0.09984047226235802
+epoch 8, loss 0.09763010868672467
+epoch 9, loss 0.0959345853320202
+epoch 10, loss 0.09476906975223742
