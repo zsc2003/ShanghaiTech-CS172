@@ -500,7 +500,6 @@ class Trainer:
                 reprojection_loss = reprojection_losses.mean(1, keepdim=True)
             else:
                 reprojection_loss = reprojection_losses
-
             if not self.opt.disable_automasking:
                 # add random numbers to break ties
                 identity_reprojection_loss += torch.randn(
@@ -525,11 +524,12 @@ class Trainer:
             mean_disp = disp.mean(2, True).mean(3, True)
             norm_disp = disp / (mean_disp + 1e-7)
             smooth_loss = get_smooth_loss(norm_disp, color)
+            smooth_loss_final = self.opt.disparity_smoothness * smooth_loss / (2 ** scale)
+            back_projection_loss = smooth_loss_final
 
             loss += self.opt.disparity_smoothness * smooth_loss / (2 ** scale)
 
-        
-            smooth_loss_final = self.opt.disparity_smoothness * smooth_loss / (2 ** scale)
+            
             # add back projection loss
             
             # print(f"to_optimise_mean = {to_optimise_mean}, smooth_loss_final = {smooth_loss_final}, loss = {loss}")
@@ -544,6 +544,7 @@ class Trainer:
                 returns:
                     distances: each entry is the distance from a sample to array1 
                 """
+                
                 num_point1, num_features1 = array1.shape
                 num_point2, num_features2 = array2.shape
 
@@ -560,7 +561,9 @@ class Trainer:
                 distances = torch.mean(distances)
                 return distances
 
-            def chamfer_distance(array1, array2):
+            def chamfer_distance(array1, array2, loss_type):
+                if loss_type:
+                    return 1
                 m_batch_size, num_point, num_features = array1.shape
                 dist = 0
                 for i in range(m_batch_size):
@@ -589,27 +592,14 @@ class Trainer:
             # print("point_clouds : ", point_clouds.shape)
             # compute 
             
-            print(point_clouds)
-            
-            
-            
-            
-
-
+            # print(point_clouds)
+            back_projection_losses =  chamfer_distance(point_clouds, predict_depth, 1)
+            # print("back_projection_losses = ", back_projection_losses)
             scale_back_project = 1
-
-
-            # back_projection_loss = scale_back_project * chamfer_distance
-
+            back_projection_losses *= scale_back_project
             # print(f"back_project_loss = {back_projection_loss}")
-
-
-
-
-
-
-
-
+            
+            loss += back_projection_loss
 
             total_loss += loss
             losses["loss/{}".format(scale)] = loss
@@ -617,6 +607,10 @@ class Trainer:
         total_loss /= self.num_scales
         losses["loss"] = total_loss
         return losses
+    
+    
+    
+    
     
     
     
