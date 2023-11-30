@@ -569,17 +569,31 @@ class Trainer:
                     dist = dist + (0.5*av_dist1+0.5*av_dist2)
                 return dist*100
 
-            # predict_depth = outputs[("depth", 0, 0)]
-            # predict_depth = torch.clamp(F.interpolate(
-            #     predict_depth, [375, 1242], mode="bilinear", align_corners=False), 1e-3, 80)
-            # predict_depth = predict_depth.detach()
+            predict_depth = outputs[("depth", 0, 0)]
+            predict_depth = torch.clamp(F.interpolate(
+                predict_depth, [375, 1242], mode="bilinear", align_corners=False), 1e-3, 80)
+            predict_depth = predict_depth.detach()
 
             # back projection to 3D point clouds
-            # predict_color = outputs[("color", scale)]
+            current_height = self.opt.height
+            current_width = self.opt.width
+            current_batch_size = self.opt.batch_size
             
+            back_projection = BackprojectDepth(current_batch_size, current_height, current_width)
+            back_projection.to(self.device)
+            
+            # print("inverse K = ", inputs[("inv_K", scale)])
+            inv_K = inputs[("inv_K", scale)]
+            point_clouds = torch.matmul(inv_K[:, :3, :3], back_projection.pix_coords)
 
-
-
+            # print("point_clouds : ", point_clouds.shape)
+            # compute 
+            
+            print(point_clouds)
+            
+            
+            
+            
 
 
             scale_back_project = 1
