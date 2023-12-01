@@ -1,0 +1,100 @@
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+epoch 0, loss 0.1576790040127731
+epoch 0, loss 0.1580964374686784
+epoch   0 | batch      0 | examples/s:   5.6 | loss: 0.23717 | time elapsed: 00h00m15s | time left: 00h00m00s
+epoch   0 | batch    250 | examples/s: 165.8 | loss: 0.15296 | time elapsed: 00h02m04s | time left: 04h47m44s
+epoch   0 | batch    500 | examples/s: 136.9 | loss: 0.14810 | time elapsed: 00h04m00s | time left: 04h36m51s
+epoch 1, loss 0.14608958874764014
+epoch 1, loss 0.14607203548798037
+epoch   1 | batch    250 | examples/s:  79.1 | loss: 0.15806 | time elapsed: 00h07m24s | time left: 04h25m47s
+epoch   1 | batch    500 | examples/s: 180.0 | loss: 0.15587 | time elapsed: 00h09m18s | time left: 04h22m34s
+epoch 2, loss 0.14119780038120744
+epoch   2 | batch    250 | examples/s:  44.3 | loss: 0.14057 | time elapsed: 00h12m48s | time left: 04h18m51s
+epoch   2 | batch    500 | examples/s: 191.4 | loss: 0.13604 | time elapsed: 00h14m41s | time left: 04h15m55s
+epoch   2 | batch    598 | examples/s:  63.5 | loss: 0.13981 | time elapsed: 00h15m25s | time left: 04h14m56s
+epoch 3, loss 0.1373488699509822
+epoch 4, loss 0.13398819160614475
+epoch 5, loss 0.1309367373011762
+epoch   5 | batch    495 | examples/s: 165.6 | loss: 0.12256 | time elapsed: 00h30m36s | time left: 03h57m32s
+epoch 6, loss 0.1284294531238232
+epoch 7, loss 0.12657469932983673
+epoch 8, loss 0.1246464221011555
+epoch   8 | batch    392 | examples/s: 150.6 | loss: 0.12485 | time elapsed: 00h45m45s | time left: 03h41m34s
+epoch 9, loss 0.12308520044647848
+epoch 10, loss 0.121206118583084
+epoch 11, loss 0.12002416725633147
+epoch  11 | batch    289 | examples/s:  70.8 | loss: 0.10987 | time elapsed: 01h00m58s | time left: 03h26m10s
+epoch 12, loss 0.11881855303440217
+epoch 13, loss 0.11782706459816784
+epoch 14, loss 0.11239450292053305
+epoch  14 | batch    186 | examples/s:  54.8 | loss: 0.11012 | time elapsed: 01h16m08s | time left: 03h10m42s
+epoch 15, loss 0.11117595444817346
+epoch 16, loss 0.11069680347549762
+epoch 17, loss 0.11024553509437068
+epoch  17 | batch     83 | examples/s:  46.3 | loss: 0.10096 | time elapsed: 01h31m11s | time left: 02h55m10s
+epoch 18, loss 0.10982467558304015
+epoch 19, loss 0.10939716902719585
+epoch  19 | batch    681 | examples/s: 206.3 | loss: 0.10822 | time elapsed: 01h46m18s | time left: 02h39m50s
+epoch 20, loss 0.10917891982873734
+epoch 21, loss 0.10892990685351055
+epoch 22, loss 0.10863386902336387
+epoch  22 | batch    578 | examples/s:  99.6 | loss: 0.10684 | time elapsed: 02h01m28s | time left: 02h24m38s
+epoch 23, loss 0.10840352508804087
+epoch 24, loss 0.10804061705350196
+epoch 25, loss 0.10794024578642403
+epoch  25 | batch    475 | examples/s: 166.6 | loss: 0.11206 | time elapsed: 02h16m25s | time left: 02h09m13s
+epoch 26, loss 0.10770210389914084
+epoch 27, loss 0.10749883413017221
+epoch 28, loss 0.10723872179864306
+epoch  28 | batch    372 | examples/s:  65.5 | loss: 0.11025 | time elapsed: 02h31m15s | time left: 01h53m48s
+epoch 29, loss 0.10666570507425724
+epoch 30, loss 0.10656313547139161
+epoch 31, loss 0.10651965531787587
+epoch  31 | batch    269 | examples/s:  46.4 | loss: 0.09611 | time elapsed: 02h46m19s | time left: 01h38m39s
+epoch 32, loss 0.10646303958882619
+epoch 33, loss 0.10641556102437061
+epoch 34, loss 0.10640870539548564
+epoch  34 | batch    166 | examples/s: 138.9 | loss: 0.11367 | time elapsed: 03h01m31s | time left: 01h23m34s
+epoch 35, loss 0.10638631997196889
+epoch 36, loss 0.10630041996439582
+epoch 37, loss 0.10633259272992016
+epoch  37 | batch     63 | examples/s:  38.6 | loss: 0.11318 | time elapsed: 03h17m30s | time left: 01h08m44s
+epoch 38, loss 0.10631888603177798
+epoch 39, loss 0.10625794925295168
+epoch  39 | batch    661 | examples/s: 199.4 | loss: 0.10576 | time elapsed: 03h32m45s | time left: 00h53m34s
+epoch 40, loss 0.10621156968633391
+epoch 41, loss 0.1062501712613201
+epoch 42, loss 0.10619619551424293
+epoch  42 | batch    558 | examples/s:  72.9 | loss: 0.10572 | time elapsed: 03h48m02s | time left: 00h38m23s
+epoch 43, loss 0.10616303775220387
+epoch 44, loss 0.10605377429689729
+epoch 45, loss 0.10608548745406678
+epoch  45 | batch    455 | examples/s:  70.9 | loss: 0.12022 | time elapsed: 04h03m14s | time left: 00h23m11s
+epoch 46, loss 0.10607724665490095
+epoch 47, loss 0.10603029163987422
+epoch 48, loss 0.1060845754966246
+epoch  48 | batch    352 | examples/s: 290.2 | loss: 0.10535 | time elapsed: 04h18m33s | time left: 00h07m59s
+epoch 49, loss 0.10608084798496902
+finish training geometry_to_rescue

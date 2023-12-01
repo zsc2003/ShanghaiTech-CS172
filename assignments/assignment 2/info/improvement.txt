@@ -1,0 +1,68 @@
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+=========================================================
+start training geometry_to_rescue
+epoch 0, loss 0.14283569801210846
+epoch 1, loss 0.1256327958041523
+finish training improvement
+=========================================================
+=========================================================
+start training geometry_to_rescue
+epoch 0, loss 0.14180700151454365
+epoch 1, loss 0.12553370910857442
+epoch 2, loss 0.11716559598389774
+epoch 3, loss 0.11245049691404324
+epoch 4, loss 0.10817407215075214
+epoch 5, loss 0.10464648091461451
+epoch 6, loss 0.10215270044162508
+epoch 7, loss 0.09984047226235802
+epoch 8, loss 0.09763010868672467
+epoch 9, loss 0.0959345853320202
+epoch 10, loss 0.09476906975223742
+epoch 11, loss 0.09285632724981335
+epoch 12, loss 0.0923492876060849
+epoch 13, loss 0.09151768349589363
+epoch 14, loss 0.08478893894441798
+epoch 15, loss 0.08313778762342927
+epoch 16, loss 0.08216993651019354
+epoch 17, loss 0.08162796875719677
+epoch 18, loss 0.08125081583963821
+epoch 19, loss 0.08065726279617207
+finish training improvement
+=========================================================
