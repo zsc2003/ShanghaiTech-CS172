@@ -1,0 +1,65 @@
+\section{conclusion}
+\label{conclusion}
+From the implements above, we can compare the accelerate effect of the vanilla NeRF, tensoRF, and NGP.
+
+All the tasks' experiments were down in the following  hardware configuration:\\
+GPU:NVIDIA GeForce RTX 4090.\\
+CPU: 13th Gen Inter(R) Core(TM) i9-13900KF of 32 cores.
+
+And the comparison of different methods in the different scenarios are in the following tables, we could discover that the both TensoRF and Instant-NGP has the better performance in acceleration. Which is much faster than the Vanilla NeRF.
+
+The Instant-NGP has the lowest training time, and TensoRF has the lowest rendering time, the different implement methods has their own advantages. The rendering result for the different method is close, and perhaps the vanilla-NeRF requires more training times, so it is worse than others.
+
+Since the background are the noise, so for the scenario $1$ and scenario $2$, we can see some foggy blur in the images, and the performance metrics are lower. With the help of matting the images, the model will not be effected by the background noise, so we can see the scenario $3$ has better performance, and has much less foggy blur.
+
+For the our method trying to improve effects, we tried to merge the advantages of the Instant-NGP and TensoRF method by applying VM decomposing to the hash encoded feature tensor. Since it was modified based on Instant-NGP, so their metrics are close.
+
+There may be further methods under exploration, but due to the time limitation, the effect achieved by us was not quite well, there are much more things need to learn, and lots of experiments need to do, which attract us to put more effort in later studying and researching. Hope we could learn more and chase for better performance. 
+
+% ---------------------------------------------------------------
+% Scenario 1
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline Method &training time$\downarrow$ & rendering time$\downarrow$  & Size$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$ & LPIPS$\downarrow$ \\
+\hline vanilla NeRF\cite{nerf_pytorch} & 317:26 & --- &  10874 & 27.825 & 0.784 & 0.308 \\
+\hline TensoRF\cite{TensoRF} & 69:10  & 103:39 & \textbf{8255} & 31.422 & \textbf{0.897} & 0.215 \\
+\hline NGP\cite{instant-ngp} & \textbf{5:12} & \textbf{55:19} & 11031 & 30.99 & 0.83 & \textbf{0.174}\\
+\hline our method & 6:18 & 65:21 & 12063 & \textbf{31.493} & 0.886 & 0.195 \\
+\hline
+\end{tabular}
+\caption{Scenario 1}
+\label{Scenario 1}
+\end{table}
+
+% ---------------------------------------------------------------
+% Scenario 2
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline Method & training time$\downarrow$ & rendering time$\downarrow$ & Size$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$ & LPIPS$\downarrow$  \\
+\hline vanilla NeRF\cite{nerf_pytorch} & 279:19  & --- & 5422 & 31.13 & 0.902 & 0.174 \\
+\hline TensoRF\cite{TensoRF} & 70:51 &  60:29  & 15376 & 35.319 & 0.938 & \textbf{0.043} \\
+\hline NGP\cite{instant-ngp} & 5:20 & \textbf{40:44} & \textbf{2630} & \textbf{36.54} & 0.893 & 0.112 \\
+\hline our method & \textbf{5:00} & 67:46 & 7625 & 35.896 & \textbf{0.943} & 0.138 \\
+\hline
+\end{tabular}
+\caption{Scenario 2}
+\label{Scenario 2}
+\end{table}
+
+% ---------------------------------------------------------------
+% Scenario 3
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline Method & training time$\downarrow$ & rendering time$\downarrow$  & Size$\downarrow$ & PSNR$\uparrow$ & SSIM$\uparrow$ & LPIPS$\downarrow$  \\
+\hline vanilla NeRF\cite{nerf_pytorch} & 303:49 & --- & 5445 & 32.518 & 0.914 & 0.128  \\
+\hline TensoRF\cite{TensoRF} & 77:12  & \textbf{10:27} & 5910 & \textbf{37.876} & 0.941 & \textbf{0.022}  \\
+\hline NGP\cite{instant-ngp} & 4:31  & 79:13 & \textbf{2689} & 37.561 & \textbf{0.955} & 0.057 \\
+\hline our method & \textbf{3:33} & 45:26 & 6913 & 37.642 & 0.944  & 0.042  \\
+\hline
+\end{tabular}
+\caption{Scenario 3}
+\label{Scenario 3}
+\end{table}
