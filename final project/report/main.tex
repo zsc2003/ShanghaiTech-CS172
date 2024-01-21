@@ -1,0 +1,94 @@
+% CVPR 2024 Paper Template; see https://github.com/cvpr-org/author-kit
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+\usepackage{cvpr}              % To produce the CAMERA-READY version
+% \usepackage[review]{cvpr}      % To produce the REVIEW version
+% \usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
+
+% Import additional packages in the preamble file, before hyperref
+\input{preamble}
+
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues, 
+% e.g. with the file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete *.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,citecolor=cvprblue]{hyperref}
+
+%%%%%%%%% PAPER ID  - PLEASE UPDATE
+\def\paperID{*****} % *** Enter the Paper ID here
+\def\confName{CVPR}
+\def\confYear{2024}
+
+%%%%%%%%% TITLE - PLEASE UPDATE
+\title{DynTCG: Dynamic View Synthesis from Monocular RGBD Streams via Flow-Tracked Compact Gaussians}
+
+%%%%%%%%% AUTHORS - PLEASE UPDATE
+\author{Zhehao Shen\\
+2021533110\\
+{\tt\small shenzhh@shanghaitech.edu.cn}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Penghao Wang\\
+2021533138\\
+{\tt\small wangph1@shanghaitech.edu.cn}
+\and
+Yu Hong\\
+2021533148\\
+{\tt\small hongyu@shanghaitech.edu.cn}
+\and
+Zhirui Zhang\\
+2021533024\\
+{\tt\small zhangzhr4@shanghaitech.edu.cn}
+\and
+Shouchen Zhou\\
+2021533042\\
+{\tt\small zhoushch@shanghaitech.edu.cn}
+}
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{colortbl}
+
+\newcommand{\highlightBest}[1]{\colorbox[rgb]{.866,.945, 0.831}{#1}}
+\newcommand{\bestCellColor}[1]{\cellcolor[rgb]{.866,.945, 0.831}#1}
+
+\newcommand{\highlightSecondBest}[1]{\colorbox[rgb]{1, 0.98, 0.83}{#1}}
+\newcommand{\secondBestCellColor}[1]{\cellcolor[rgb]{1, 0.98, 0.83}#1}
+% 255 224 218
+\newcommand{\highlightThirdBest}[1]{\colorbox[rgb]{1, 0.87, 0.85}{#1}}
+\newcommand{\thirdBestCellColor}[1]{\cellcolor[rgb]{1, 0.87, 0.85}{#1}}
+
+
+\begin{document}
+\maketitle
+% \input{sec/0_abstract}    
+% \input{sec/1_intro}
+% \input{sec/2_formatting}
+\input{sec/abstract}
+\input{sec/intro}
+\input{sec/methods}
+\input{sec/experiment}
+\input{sec/results}
+{
+    \small
+    \bibliographystyle{ieeenat_fullname}
+    \bibliography{main}
+}
+
+% WARNING: do not forget to delete the supplementary pages from your submission 
+% \input{sec/X_suppl}
+
+\end{document}
